@@ -6,7 +6,7 @@ const cors = require('cors')
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
-const config = require("./config/key");
+const config = require("./config/dev");
 
 // const mongoose = require("mongoose");
 // mongoose
