@@ -16,7 +16,7 @@ const config = require("./config/key");
 
 const mongoose = require("mongoose");
 const connect = mongoose
-    .connect("mongodb+srv://dsango:V3nu5266£££@projectrecommenddb.ywrnj.mongodb.net/testDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
+    .connect(config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("MongoDB Connected..."))
     .catch((err) => console.log(err));
 
