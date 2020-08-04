@@ -5,45 +5,33 @@ const productSchema = mongoose.Schema(
     {
         writer: {
             type: Schema.Types.ObjectId,
-            ref: "User",
+            ref: "User"
         },
         title: {
             type: String,
-            maxlength: 50,
+            maxlength: 50
         },
         description: {
-            type: String,
+            type: String
         },
         link: {
-            type: String,
+            type: String
         },
         language: {
             type: String,
-            maxlength: 50,
+            maxlength: 50
         },
         skill_level: {
             type: String,
-            maxlength: 50,
+            maxlength: 50
         },
         participation: {
             type: String,
-            maxlength: 50,
+            maxlength: 50
         },
         tags: {
-            type: String,
+            type: String
         },
-        // price: {
-        //     type: Number,
-        //     default: 0
-        // },
-        // images: {
-        //     type: Array,
-        //     default: []
-        // },
-        // continents: {
-        //     type: Number,
-        //     default: 1
-        // },
         sold: {
             type: Number,
             maxlength: 100,
@@ -52,11 +40,9 @@ const productSchema = mongoose.Schema(
         views: {
             type: Number,
             default: 0,
-        },
-    },
-    { timestamps: true }
-);
-
+        }
+    }, { timestamps: true }
+)
 
 productSchema.index({ 
     title:'text',

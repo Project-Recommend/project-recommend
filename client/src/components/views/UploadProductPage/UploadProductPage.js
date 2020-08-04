@@ -108,7 +108,7 @@ function UploadProductPage(props) {
     return (
         <div style={{ maxWidth: "700px", margin: "2rem auto" }}>
             <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-                <Title level={2}> Upload Travel Product</Title>
+                <Title level={2}> Upload Project</Title>
             </div>
 
             <Form onSubmit={onSubmit}>
@@ -130,7 +130,7 @@ function UploadProductPage(props) {
                 <br />
                 <br />
                 <label>Language</label>
-                <TextArea onChange={onLanguageChange} value={LanguageValue} />
+                <Input onChange={onLanguageChange} value={LanguageValue} />
                 <br />
                 <br />
                 <label>Skill Level</label>
@@ -138,7 +138,7 @@ function UploadProductPage(props) {
                 <br />
                 <br />
                 <label>Participation</label>
-                <TextArea onChange={onParticipationChange} value={ParticipationValue} />
+                <Input onChange={onParticipationChange} value={ParticipationValue} />
                 <br />
                 <br />
                 <label>Tags</label>
