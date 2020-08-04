@@ -1,40 +1,61 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const productSchema = mongoose.Schema({
-    writer: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
+const productSchema = mongoose.Schema(
+    {
+        writer: {
+            type: Schema.Types.ObjectId,
+            ref: "User",
+        },
+        title: {
+            type: String,
+            maxlength: 50,
+        },
+        description: {
+            type: String,
+        },
+        link: {
+            type: String,
+        },
+        language: {
+            type: String,
+            maxlength: 50,
+        },
+        skill_level: {
+            type: String,
+            maxlength: 50,
+        },
+        participation: {
+            type: String,
+            maxlength: 50,
+        },
+        tags: {
+            type: String,
+        },
+        // price: {
+        //     type: Number,
+        //     default: 0
+        // },
+        // images: {
+        //     type: Array,
+        //     default: []
+        // },
+        // continents: {
+        //     type: Number,
+        //     default: 1
+        // },
+        sold: {
+            type: Number,
+            maxlength: 100,
+            default: 0,
+        },
+        views: {
+            type: Number,
+            default: 0,
+        },
     },
-    title: {
-        type: String,
-        maxlength: 50
-    },
-    description: {
-        type: String
-    },
-    price: {
-        type: Number,
-        default: 0
-    },
-    images: {
-        type: Array,
-        default: []
-    },
-    continents: {
-        type: Number,
-        default: 1
-    },
-    sold: {
-        type: Number,
-        maxlength: 100,
-        default: 0
-    },
-    views: {
-        type: Number,
-        default: 0
-    }
-}, { timestamps: true })
+    { timestamps: true }
+);
 
 
 productSchema.index({ 
@@ -42,7 +63,7 @@ productSchema.index({
     description: 'text',
 }, {
     weights: {
-        name: 5,
+        name: 7,
         description: 1,
     }
 })
