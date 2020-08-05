@@ -5,6 +5,8 @@ import axios from 'axios';
 import { USER_SERVER } from '../../../Config';
 import { withRouter } from 'react-router-dom';
 import { useSelector } from "react-redux";
+const SubMenu = Menu.SubMenu;
+const MenuItemGroup = Menu.ItemGroup;
 
 function RightMenu(props) {
   const user = useSelector(state => state.user)
@@ -50,10 +52,18 @@ function RightMenu(props) {
           </Badge>
         </Menu.Item>
 
+        <SubMenu title={<span>User</span>}>
+          <MenuItemGroup title="">
+            <Menu.Item key="setting:1">Account</Menu.Item>
+            <Menu.Item key="setting:2">Teams</Menu.Item>
+            <Menu.Item key="setting:3">Settings</Menu.Item>
+            <Menu.Item key="logout"><a onClick={logoutHandler}>Logout</a></Menu.Item>
+          </MenuItemGroup>
+        </SubMenu>
 
-        <Menu.Item key="logout">
+        {/* <Menu.Item key="logout">
           <a onClick={logoutHandler}>Logout</a>
-        </Menu.Item>
+        </Menu.Item> */}
       </Menu>
     )
   }
