@@ -1,36 +1,42 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const productSchema = mongoose.Schema(
     {
         writer: {
             type: Schema.Types.ObjectId,
-            ref: "User"
+            ref: "User",
         },
         title: {
             type: String,
-            maxlength: 50
+            maxlength: 50,
         },
         description: {
-            type: String
-        },
-        link: {
-            type: String
-        },
-        language: {
             type: String,
-            maxlength: 50
         },
-        skill_level: {
+        description1: {
             type: String,
-            maxlength: 50
         },
-        participation: {
+        description2: {
             type: String,
-            maxlength: 50
         },
-        tags: {
-            type: String
+        description3: {
+            type: String,
+        },
+        description4: {
+            type: String,
+        },
+        price: {
+            type: Number,
+            default: 0,
+        },
+        images: {
+            type: Array,
+            default: [],
+        },
+        continents: {
+            type: Number,
+            default: 1,
         },
         sold: {
             type: Number,
@@ -40,20 +46,24 @@ const productSchema = mongoose.Schema(
         views: {
             type: Number,
             default: 0,
-        }
-    }, { timestamps: true }
-)
+        },
+    },
+    { timestamps: true }
+);
 
-productSchema.index({ 
-    title:'text',
-    description: 'text',
-}, {
-    weights: {
-        name: 7,
-        description: 1,
+productSchema.index(
+    {
+        title: "text",
+        description: "text",
+    },
+    {
+        weights: {
+            name: 5,
+            description: 1,
+        },
     }
-})
+);
 
-const Product = mongoose.model('Product', productSchema);
+const Product = mongoose.model("Product", productSchema);
 
-module.exports = { Product }
+module.exports = { Product };
