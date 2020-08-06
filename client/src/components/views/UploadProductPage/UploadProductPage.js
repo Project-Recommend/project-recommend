@@ -6,25 +6,25 @@ import Axios from "axios";
 const { Title } = Typography;
 const { TextArea } = Input;
 
-const Continents = [
-    { key: 1, value: "Africa" },
-    { key: 2, value: "Europe" },
-    { key: 3, value: "Asia" },
-    { key: 4, value: "North America" },
-    { key: 5, value: "South America" },
-    { key: 6, value: "Australia" },
-    { key: 7, value: "Antarctica" },
+const SkillLevel = [
+    { key: 1, value: "Beginner" },
+    { key: 2, value: "Intermediate" },
+    { key: 3, value: "Advanced" },
+];
+
+const Participation = [
+    { key: 1, value: "Single" },
+    { key: 2, value: "Team" },
 ];
 
 function UploadProductPage(props) {
     const [TitleValue, setTitleValue] = useState("");
     const [DescriptionValue, setDescriptionValue] = useState("");
-    const [Description1Value, setDescription1Value] = useState("");
-    const [Description2Value, setDescription2Value] = useState("");
-    const [Description3Value, setDescription3Value] = useState("");
-    const [Description4Value, setDescription4Value] = useState("");
-    const [PriceValue, setPriceValue] = useState(0);
-    const [ContinentValue, setContinentValue] = useState(1);
+    const [LinkValue, setLinkValue] = useState("");
+    const [CodingLanguageValue, setCodingLanguageValue] = useState("");
+    const [SkillLevelValue, setSkillLevelValue] = useState(1);
+    const [ParticipationValue, setParticipationValue] = useState(1);
+    const [TagValue, setTagValue] = useState("");
 
     const [Images, setImages] = useState([]);
 
@@ -36,28 +36,24 @@ function UploadProductPage(props) {
         setDescriptionValue(event.currentTarget.value);
     };
 
-    const onDescription1Change = (event) => {
-        setDescription1Value(event.currentTarget.value);
+    const onLinkChange = (event) => {
+        setLinkValue(event.currentTarget.value);
     };
 
-    const onDescription2Change = (event) => {
-        setDescription2Value(event.currentTarget.value);
+    const onCodingLanguageChange = (event) => {
+        setCodingLanguageValue(event.currentTarget.value);
     };
 
-    const onDescription3Change = (event) => {
-        setDescription3Value(event.currentTarget.value);
+    const onTagChange = (event) => {
+        setTagValue(event.currentTarget.value);
     };
 
-    const onDescription4Change = (event) => {
-        setDescription4Value(event.currentTarget.value);
+    const onSkillLevelSelectChange = (event) => {
+        setSkillLevelValue(event.currentTarget.value);
     };
 
-    const onPriceChange = (event) => {
-        setPriceValue(event.currentTarget.value);
-    };
-
-    const onContinentsSelectChange = (event) => {
-        setContinentValue(event.currentTarget.value);
+    const onParticipationSelectChange = (event) => {
+        setParticipationValue(event.currentTarget.value);
     };
 
     const updateImages = (newImages) => {
@@ -66,21 +62,20 @@ function UploadProductPage(props) {
     const onSubmit = (event) => {
         event.preventDefault();
 
-        if (!TitleValue || !DescriptionValue || !PriceValue || !ContinentValue || !Images) {
+        if (!TitleValue || !DescriptionValue || !LinkValue || !CodingLanguageValue || !TagValue || !SkillLevelValue || !ParticipationValue || !Images) {
             return alert("fill all the fields first!");
         }
 
         const variables = {
-            writer: props.user.userData._id,
+            // writer: props.user.userData._id,
             title: TitleValue,
             description: DescriptionValue,
-            description1: Description1Value,
-            description2: Description2Value,
-            description3: Description3Value,
-            description4: Description4Value,
-            price: PriceValue,
+            link: LinkValue,
+            codinglanguage: CodingLanguageValue,
             images: Images,
-            continents: ContinentValue,
+            skilllevel: SkillLevelValue,
+            participation: ParticipationValue,
+            tag: TagValue
         };
 
         Axios.post("/api/product/uploadProduct", variables).then((response) => {
@@ -96,7 +91,7 @@ function UploadProductPage(props) {
     return (
         <div style={{ maxWidth: "700px", margin: "2rem auto" }}>
             <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-                <Title level={2}> Upload Travel Product</Title>
+                <Title level={2}> Upload Coding Project</Title>
             </div>
 
             <Form onSubmit={onSubmit}>
@@ -113,33 +108,38 @@ function UploadProductPage(props) {
                 <TextArea onChange={onDescriptionChange} value={DescriptionValue} />
                 <br />
                 <br />
-                <label>Description</label>
-                <TextArea onChange={onDescription1Change} value={Description1Value} />
+                <label>Link</label>
+                <TextArea onChange={onLinkChange} value={LinkValue} />
                 <br />
                 <br />
-                <label>Description</label>
-                <TextArea onChange={onDescription2Change} value={Description2Value} />
+                <label>Language</label>
+                <TextArea onChange={onCodingLanguageChange} value={CodingLanguageValue} />
                 <br />
                 <br />
-                <label>Description</label>
-                <TextArea onChange={onDescription3Change} value={Description3Value} />
+                <label>Skill Level</label>
                 <br />
-                <br />
-                <label>Description</label>
-                <TextArea onChange={onDescription4Change} value={Description4Value} />
-                <br />
-                <br />
-                <label>Price($)</label>
-                <Input onChange={onPriceChange} value={PriceValue} type="number" />
-                <br />
-                <br />
-                <select onChange={onContinentsSelectChange} value={ContinentValue}>
-                    {Continents.map((item) => (
+                <select onChange={onSkillLevelSelectChange} value={SkillLevelValue}>
+                    {SkillLevel.map((item) => (
                         <option key={item.key} value={item.key}>
                             {item.value}{" "}
                         </option>
                     ))}
                 </select>
+                <br />
+                <br />
+                <label>Participation</label>
+                <br />
+                <select onChange={onParticipationSelectChange} value={ParticipationValue}>
+                    {Participation.map((item) => (
+                        <option key={item.key} value={item.key}>
+                            {item.value}{" "}
+                        </option>
+                    ))}
+                </select>
+                <br />
+                <br />
+                <label>Tags</label>
+                <TextArea onChange={onTagChange} value={TagValue} />
                 <br />
                 <br />
 

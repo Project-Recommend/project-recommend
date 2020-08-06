@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
 import { Icon, Col, Card, Row } from 'antd';
-import ImageSlider from '../../utils/ImageSlider';
+// import ImageSlider from '../../utils/ImageSlider';
 import CheckBox from './Sections/CheckBox';
 import RadioBox from './Sections/RadioBox';
-import { continents, price } from './Sections/Datas';
+import { skilllevel, participation } from './Sections/Datas';
 import SearchFeature from './Sections/SearchFeature';
 
 const { Meta } = Card;
@@ -18,8 +18,8 @@ function LandingPage() {
     const [SearchTerms, setSearchTerms] = useState("")
 
     const [Filters, setFilters] = useState({
-        continents: [],
-        price: []
+        skilllevel: [],
+        participation: []
     })
 
     useEffect(() => {
@@ -70,10 +70,8 @@ function LandingPage() {
             <Col lg={6} md={8} xs={24}>
                 <Card
                     hoverable={true}
-                    // cover={<img src={product.images} href={`/product/${product._id}`} />}
-                    cover={<a href={`/product/${product._id}`} > <ImageSlider images={product.images} /></a>}
                 >
-                    <Meta title={product.title} description={`${product.description}`}><a href={`/product/${product._id}`} /></Meta>
+                    <Meta title={product.title} description={<a href={`/product/${product._id}`}>{product.description}</a>} style={{fontWeight: 400, fontSize: "14px"}}></Meta>
                 </Card>
             </Col>
         );
@@ -93,31 +91,11 @@ function LandingPage() {
 
     }
 
-    const handlePrice = (value) => {
-        const data = price;
-        let array = [];
-
-        for (let key in data) {
-
-            if (data[key]._id === parseInt(value, 10)) {
-                array = data[key].array;
-            }
-        }
-        console.log('array', array)
-        return array
-    }
-
     const handleFilters = (filters, category) => {
 
         const newFilters = { ...Filters }
 
         newFilters[category] = filters
-
-        if (category === "price") {
-            let priceValues = handlePrice(filters)
-            newFilters[category] = priceValues
-
-        }
 
         console.log(newFilters)
 
@@ -144,7 +122,7 @@ function LandingPage() {
     return (
         <div style={{ width: '75%', margin: '3rem auto' }}>
             <div style={{ textAlign: 'center' }}>
-                <h2>  Let's Travel Anywhere  <Icon type="rocket" />  </h2>
+                <h1>  Catalog  <Icon type="rocket" />  </h1>
             </div>
 
 
@@ -153,14 +131,14 @@ function LandingPage() {
             <Row gutter={[16, 16]}>
                 <Col lg={12} xs={24} >
                     <CheckBox
-                        list={continents}
-                        handleFilters={filters => handleFilters(filters, "continents")}
+                        list={skilllevel}
+                        handleFilters={filters => handleFilters(filters, "skilllevel")}
                     />
                 </Col>
                 <Col lg={12} xs={24}>
                     <RadioBox
-                        list={price}
-                        handleFilters={filters => handleFilters(filters, "price")}
+                        list={participation}
+                        handleFilters={filters => handleFilters(filters, "participation")}
                     />
                 </Col>
             </Row>
@@ -178,7 +156,7 @@ function LandingPage() {
 
             {Products.length === 0 ?
                 <div style={{ display: 'flex', height: '300px', justifyContent: 'center', alignItems: 'center' }}>
-                    <h2>No post yet...</h2>
+                    <h2>No projects yet...</h2>
                 </div> :
                 <div>
                     <Row gutter={[16, 16]}>

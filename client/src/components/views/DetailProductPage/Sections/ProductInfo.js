@@ -18,25 +18,28 @@ function ProductInfo(props) {
 
     return (
         <div>
-            <Descriptions title="Product Info">
-                <Descriptions.Item label="Price"> {Product.price}</Descriptions.Item>
-                <Descriptions.Item label="Sold">{Product.sold}</Descriptions.Item>
-                <Descriptions.Item label="View"> {Product.views}</Descriptions.Item>
-                <Descriptions.Item label="Description"> {Product.description}</Descriptions.Item>
+            <Descriptions title="">
+                <Descriptions.Item label="Title">{Product.title}</Descriptions.Item>
+                <Descriptions.Item label="Description">{Product.description}</Descriptions.Item>
+                <Descriptions.Item label="Link">
+                    <a href={Product.link}>{Product.link}</a>
+                </Descriptions.Item>
+                <Descriptions.Item label="Language">{Product.codinglanguage}</Descriptions.Item>
+                <Descriptions.Item label="Skill Level">{Product.skilllevel}</Descriptions.Item>
+                <Descriptions.Item label="Participation">{Product.participation}</Descriptions.Item>
+                <Descriptions.Item label="Tags">{Product.tag}</Descriptions.Item>
             </Descriptions>
 
             <br />
             <br />
             <br />
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <Button size="large" shape="round" type="danger"
-                    onClick={addToCarthandler}
-                >
+            <div style={{ display: "flex", justifyContent: "center" }}>
+                <Button size="large" shape="round" type="danger" onClick={addToCarthandler}>
                     Add to Cart
-                    </Button>
+                </Button>
             </div>
         </div>
-    )
+    );
 }
 
 export default ProductInfo

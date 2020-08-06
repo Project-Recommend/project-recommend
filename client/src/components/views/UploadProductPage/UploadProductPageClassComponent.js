@@ -6,25 +6,27 @@ import FileUpload from "../../utils/FileUpload";
 const { Title } = Typography;
 const { TextArea } = Input;
 
-const Continents = [
-    { key: 1, value: "Africa" },
-    { key: 2, value: "Europe" },
-    { key: 3, value: "Asia" },
-    { key: 4, value: "North America" },
-    { key: 5, value: "South America" },
-    { key: 6, value: "Australia" },
-    { key: 7, value: "Antarctica" },
+const SkillLevel = [
+    { key: 1, value: "Beginner" },
+    { key: 2, value: "Intermediate" },
+    { key: 3, value: "Advanced" },
+];
+
+const Participation = [
+    { key: 1, value: "Single" },
+    { key: 2, value: "Team" },
 ];
 
 export class UploadProductPage extends Component {
     state = {
         title: "",
         description: "",
-        description1: "",
-        description2: "",
+        link: "",
+        language: "",
         description3: "",
         description4: "",
-        continents: 1,
+        skilllevel: 1,
+        participation: 1,
         images: [],
         price: 0,
     };
@@ -38,32 +40,31 @@ export class UploadProductPage extends Component {
     };
 
     handleChangeDecsription = (event) => {
-        // console.log(event.currentTarget.value)
         this.setState({ description: event.currentTarget.value });
     };
 
-    handleChangeDecsription1 = (event) => {
-        // console.log(event.currentTarget.value)
-        this.setState({ description1: event.currentTarget.value });
+    handleChangeLink = (event) => {
+        this.setState({ link: event.currentTarget.value });
     };
 
-    handleChangeDecsription2 = (event) => {
-        // console.log(event.currentTarget.value)
-        this.setState({ description2: event.currentTarget.value });
+    handleChangeLanguage = (event) => {
+        this.setState({ language: event.currentTarget.value });
     };
 
     handleChangeDecsription3 = (event) => {
-        // console.log(event.currentTarget.value)
         this.setState({ description3: event.currentTarget.value });
     };
 
     handleChangeDecsription4 = (event) => {
-        // console.log(event.currentTarget.value)
         this.setState({ description4: event.currentTarget.value });
     };
 
-    handleChangeContinents = (event) => {
-        this.setState({ continents: event.currentTarget.value });
+    handleChangeSkillLevel = (event) => {
+        this.setState({ skilllevel: event.currentTarget.value });
+    };
+
+    handleChangeParticipation = (event) => {
+        this.setState({ participation: event.currentTarget.value });
     };
 
     onSubmit = (event) => {
@@ -73,7 +74,18 @@ export class UploadProductPage extends Component {
             return alert("Please Log in First");
         }
 
-        if (!this.state.title || !this.state.description || !this.state.continents || !this.state.images || !this.state.price) {
+        if (
+            !this.state.title ||
+            !this.state.description ||
+            !this.state.link ||
+            !this.state.language ||
+            !this.state.description3 ||
+            !this.state.description4 ||
+            !this.state.skilllevel ||
+            !this.state.participation ||
+            !this.state.images ||
+            !this.state.price
+        ) {
             return alert("Please first fill all the fields");
         }
 
@@ -81,12 +93,13 @@ export class UploadProductPage extends Component {
             writer: this.props.user.userData._id,
             title: this.state.title,
             description: this.state.description,
-            description1: this.state.description1,
-            description2: this.state.description2,
+            link: this.state.link,
+            language: this.state.language,
             description3: this.state.description3,
             description4: this.state.description4,
             images: this.state.images,
-            continents: this.state.continents,
+            skilllevel: this.state.skilllevel,
+            participation: this.state.participation,
             price: this.state.price,
         };
 
@@ -126,12 +139,12 @@ export class UploadProductPage extends Component {
                     <TextArea onChange={this.handleChangeDecsription} value={this.state.description} />
                     <br />
                     <br />
-                    <label>Description1</label>
-                    <TextArea onChange={this.handleChangeDecsription1} value={this.state.description1} />
+                    <label>Link</label>
+                    <TextArea onChange={this.handleChangeLink} value={this.state.link} />
                     <br />
                     <br />
-                    <label>Description2</label>
-                    <TextArea onChange={this.handleChangeDecsription2} value={this.state.description2} />
+                    <label>Language</label>
+                    <TextArea onChange={this.handleChangeLanguage} value={this.state.language} />
                     <br />
                     <br />
                     <label>Description3</label>
@@ -146,8 +159,21 @@ export class UploadProductPage extends Component {
                     <Input type="number" onChange={this.handleChangePrice} value={this.state.price} />
                     <br />
                     <br />
-                    <select onChange={this.handleChangeContinents}>
-                        {Continents.map((item) => (
+                    <label>Skill Level</label>
+                    <br />
+                    <select onChange={this.handleChangeSkillLevel}>
+                        {SkillLevel.map((item) => (
+                            <option key={item.key} value={item.key}>
+                                {item.value}
+                            </option>
+                        ))}
+                    </select>
+                    <br />
+                    <br />
+                    <label>Participation</label>
+                    <br />
+                    <select onChange={this.handleChangeParticipation}>
+                        {Participation.map((item) => (
                             <option key={item.key} value={item.key}>
                                 {item.value}
                             </option>
