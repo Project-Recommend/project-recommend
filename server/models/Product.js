@@ -3,10 +3,6 @@ const Schema = mongoose.Schema;
 
 const productSchema = mongoose.Schema(
     {
-        writer: {
-            type: Schema.Types.ObjectId,
-            ref: "User",
-        },
         title: {
             type: String,
             maxlength: 50,
@@ -14,39 +10,36 @@ const productSchema = mongoose.Schema(
         description: {
             type: String,
         },
-        description1: {
+        link: {
             type: String,
         },
-        description2: {
+        codinglanguage: {
             type: String,
         },
-        description3: {
-            type: String,
-        },
-        description4: {
-            type: String,
-        },
-        price: {
-            type: Number,
-            default: 0,
-        },
-        images: {
-            type: Array,
-            default: [],
-        },
-        continents: {
+        skilllevel: {
             type: Number,
             default: 1,
         },
-        sold: {
+        participation: {
             type: Number,
-            maxlength: 100,
-            default: 0,
+            default: 1,
         },
-        views: {
-            type: Number,
-            default: 0,
+        tag: {
+            type: String,
         },
+        // images: {
+        //     type: Array,
+        //     default: [],
+        // },
+        // sold: {
+        //     type: Number,
+        //     maxlength: 100,
+        //     default: 0,
+        // },
+        // views: {
+        //     type: Number,
+        //     default: 0,
+        // },
     },
     { timestamps: true }
 );
@@ -58,7 +51,7 @@ productSchema.index(
     },
     {
         weights: {
-            name: 5,
+            name: 6,
             description: 1,
         },
     }
