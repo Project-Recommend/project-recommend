@@ -36,6 +36,10 @@ function RightMenu(props) {
     return (
       <Menu mode={props.mode}>
 
+        <Menu.Item key="catalog">
+          <a href="/catalog">Catalog</a>
+        </Menu.Item>
+
         <Menu.Item key="history">
           <a href="/history">History</a>
         </Menu.Item>
@@ -60,10 +64,7 @@ function RightMenu(props) {
             <Menu.Item key="logout"><a onClick={logoutHandler}>Logout</a></Menu.Item>
           </MenuItemGroup>
         </SubMenu>
-
-        {/* <Menu.Item key="logout">
-          <a onClick={logoutHandler}>Logout</a>
-        </Menu.Item> */}
+        
       </Menu>
     )
   }
