@@ -21,6 +21,12 @@ body {
   background-color: #fff;
 }
 
+.container {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .app {
   flex-direction: column;
   display: flex;
@@ -54,4 +60,28 @@ td,th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+/* ----------------------------------------------
+----              TABLET VIEWS               ----
+---------------------------------------------- */
+
+@media (max-width: 991px) {
+  .container {
+    width: 80%;
+    margin-left: 2rem;
+    margin-right: 2rem
+  }
+}
+
+/* ----------------------------------------------
+----               PHONE VIEWS               ----
+---------------------------------------------- */
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    margin-left: 1rem;
+    margin-right: 1rem
+  }
 }
