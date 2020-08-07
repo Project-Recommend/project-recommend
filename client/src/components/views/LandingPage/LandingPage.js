@@ -71,7 +71,7 @@ function LandingPage() {
                 <Card
                     hoverable={true}
                 >
-                    <Meta title={product.title} description={<a href={`/product/${product._id}`}>{product.description}</a>} style={{fontWeight: 400, fontSize: "14px"}}></Meta>
+                    <Meta title={product.title} description={<a href={`/product/${product._id}`} style={{textDecoration: "none"}}>{product.description}</a>}></Meta>
                 </Card>
             </Col>
         );
@@ -131,12 +131,14 @@ function LandingPage() {
             <Row gutter={[16, 16]}>
                 <Col lg={12} xs={24} >
                     <CheckBox
+                        title={"Skill Level"}
                         list={skilllevel}
                         handleFilters={filters => handleFilters(filters, "skilllevel")}
                     />
                 </Col>
                 <Col lg={12} xs={24}>
-                    <RadioBox
+                    <CheckBox
+                        title={"Participation"}
                         list={participation}
                         handleFilters={filters => handleFilters(filters, "participation")}
                     />
