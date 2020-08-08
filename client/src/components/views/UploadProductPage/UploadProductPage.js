@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Typography, Button, Form, message, Input, Icon } from "antd";
-import FileUpload from "../../utils/FileUpload";
 import Axios from "axios";
 
 const { Title } = Typography;
@@ -25,8 +24,6 @@ function UploadProductPage(props) {
     const [SkillLevelValue, setSkillLevelValue] = useState(1);
     const [ParticipationValue, setParticipationValue] = useState(1);
     const [TagValue, setTagValue] = useState("");
-
-    const [Images, setImages] = useState([]);
 
     const onTitleChange = (event) => {
         setTitleValue(event.currentTarget.value);
@@ -56,13 +53,10 @@ function UploadProductPage(props) {
         setParticipationValue(event.currentTarget.value);
     };
 
-    const updateImages = (newImages) => {
-        setImages(newImages);
-    };
     const onSubmit = (event) => {
         event.preventDefault();
 
-        if (!TitleValue || !DescriptionValue || !LinkValue || !CodingLanguageValue || !TagValue || !SkillLevelValue || !ParticipationValue || !Images) {
+        if (!TitleValue || !DescriptionValue || !LinkValue || !CodingLanguageValue || !TagValue || !SkillLevelValue || !ParticipationValue) {
             return alert("fill all the fields first!");
         }
 
@@ -72,7 +66,6 @@ function UploadProductPage(props) {
             description: DescriptionValue,
             link: LinkValue,
             codinglanguage: CodingLanguageValue,
-            images: Images,
             skilllevel: SkillLevelValue,
             participation: ParticipationValue,
             tag: TagValue
@@ -80,10 +73,10 @@ function UploadProductPage(props) {
 
         Axios.post("/api/product/uploadProduct", variables).then((response) => {
             if (response.data.success) {
-                alert("Product Successfully Uploaded");
+                alert("Project successfully uploaded.");
                 props.history.push("/");
             } else {
-                alert("Failed to upload Product");
+                alert("Failed to upload project.");
             }
         });
     };
@@ -95,10 +88,6 @@ function UploadProductPage(props) {
             </div>
 
             <Form onSubmit={onSubmit}>
-                {/* DropZone */}
-                <FileUpload refreshFunction={updateImages} />
-
-                <br />
                 <br />
                 <label>Title</label>
                 <Input onChange={onTitleChange} value={TitleValue} />

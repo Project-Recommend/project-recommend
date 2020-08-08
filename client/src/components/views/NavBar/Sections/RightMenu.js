@@ -22,6 +22,7 @@ function RightMenu(props) {
   };
 
   if (user.userData && !user.userData.isAuth) {
+
     return (
       <Menu mode={props.mode}>
         <Menu.Item key="mail">
@@ -33,8 +34,13 @@ function RightMenu(props) {
       </Menu>
     )
   } else {
+
     return (
       <Menu mode={props.mode}>
+
+        <Menu.Item key="catalog">
+          <a href="/catalog">Catalog</a>
+        </Menu.Item>
 
         <Menu.Item key="history">
           <a href="/history">History</a>
@@ -60,10 +66,7 @@ function RightMenu(props) {
             <Menu.Item key="logout"><a onClick={logoutHandler}>Logout</a></Menu.Item>
           </MenuItemGroup>
         </SubMenu>
-
-        {/* <Menu.Item key="logout">
-          <a onClick={logoutHandler}>Logout</a>
-        </Menu.Item> */}
+        
       </Menu>
     )
   }

@@ -27,15 +27,6 @@ var upload = multer({ storage: storage }).single("file");
 //             Product
 //=================================
 
-router.post("/uploadImage", auth, (req, res) => {
-    upload(req, res, (err) => {
-        if (err) {
-            return res.json({ success: false, err });
-        }
-        return res.json({ success: true, image: res.req.file.path, fileName: res.req.file.filename });
-    });
-});
-
 router.post("/uploadProduct", auth, (req, res) => {
     //save all the data we got from the client into the DB
     const product = new Product(req.body);
@@ -68,7 +59,7 @@ router.post("/getProducts", (req, res) => {
         }
     }
 
-    console.log(findArgs);
+    // console.log(findArgs);
 
     if (term) {
         Product.find(findArgs)
@@ -100,7 +91,7 @@ router.get("/products_by_id", (req, res) => {
     let type = req.query.type;
     let productIds = req.query.id;
 
-    console.log("req.query.id", req.query.id);
+    // console.log("req.query.id", req.query.id);
 
     if (type === "array") {
         let ids = req.query.id.split(",");
@@ -110,7 +101,7 @@ router.get("/products_by_id", (req, res) => {
         });
     }
 
-    console.log("productIds", productIds);
+    // console.log("productIds", productIds);
 
     //we need to find the product information that belong to product Id
     Product.find({ _id: { $in: productIds } })
