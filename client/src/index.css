@@ -1,65 +1,188 @@
 @import "~react-image-gallery/styles/css/image-gallery.css";
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 14px;
-  line-height: 1.5;
-  color: #24292e;
-  background-color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    line-height: 1.5;
+    color: #24292e;
+    background-color: #fff;
+}
+
+.bodyContent {
+    padding-top: 68px;
+    min-height: calc(100vh - 68px);
 }
 
 .container {
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
+    width: 70%;
+    margin: auto;
 }
 
 .app {
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 input.error {
-  border-color: red;
+    border-color: red;
 }
 
-
 .input-feedback {
-  color: red;
-  height: 5px;
-  margin-top: -12px;
+    color: red;
+    height: 5px;
+    margin-top: -12px;
 }
 
 table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
 }
 
-td,th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+    background-color: #dddddd;
+}
+
+.footer {
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+/*-----------------------------------------
+*  Contact Us
+-----------------------------------------*/
+.form-group {
+  position: relative;
+  width: 100%;
+}
+.form-group .form-control {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  height: 40px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+  width: 100%;
+  font-size: 14px;
+  color: #000;
+  background: none;
+}
+
+.form-group .sign-group {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+  width: 100%;
+  font-size: 14px;
+  color: #fff;
+  background: rgba(29, 29, 29, 0.7);
+}
+
+.form-group textarea.form-control {
+  height: 100px;
+}
+.form-group textarea.sign-form-control {
+  height: 100px;
+}
+
+.form-group select {
+  border: none;
+  outline: none;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom: 2px solid #a09eb5;
+  border-radius: 0;
+  width: 100%;
+}
+
+.form-group .input-focus-effect {
+  width: 0 !important;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: ease all 0.3s;
+  -o-transition: ease all 0.3s;
+  transition: ease all 0.3s;
+  height: 2px;
+  background: #26a69a;
+}
+
+.form-group .sign-input-focus-effect {
+  width: 0 !important;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: ease all 0.3s;
+  -o-transition: ease all 0.3s;
+  transition: ease all 0.3s;
+  height: 2px;
+  background: #F14141;
+}
+
+.form-group textarea:focus:not([readonly]) + span.input-focus-effect,
+.form-group input:focus:not([readonly]) + span.input-focus-effect,
+.form-group select:focus:not([readonly]) + span.input-focus-effect,
+.form-group textarea:focus:not([readonly]) + span.sign-input-focus-effect,
+.form-group input:focus:not([readonly]) + span.sign-input-focus-effect,
+.form-group select:focus:not([readonly]) + span.sign-input-focus-effect {
+  width: 100% !important;
+}
+
+.contact-form {
+  padding: 25px;
+  border: 1px solid #e7e5f7;
+  background: #fff;
+}
+
+.contact-form h2 {
+  font-size: 18px;
+  color: #292929;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  padding: 25px;
+  margin-right: 25px;
+  border: 1px solid #e7e5f7;
+  height: 100%;
+  background: #fff;
 }
 
 /* ----------------------------------------------
@@ -67,11 +190,15 @@ tr:nth-child(even) {
 ---------------------------------------------- */
 
 @media (max-width: 991px) {
-  .container {
-    width: 80%;
-    margin-left: 2rem;
-    margin-right: 2rem
-  }
+    .bodyContent {
+        padding-top: 68px;
+        min-height: calc(100vh - 68px);
+    }
+
+    .container {
+        width: 75%;
+        margin: 2rem auto;
+    }
 }
 
 /* ----------------------------------------------
@@ -79,9 +206,13 @@ tr:nth-child(even) {
 ---------------------------------------------- */
 
 @media (max-width: 768px) {
-  .container {
-    width: 90%;
-    margin-left: 1rem;
-    margin-right: 1rem
-  }
+    .bodyContent {
+        padding-top: 50px;
+        min-height: calc(100vh - 50px);
+    }
+
+    .container {
+        width: 81%;
+        margin: 1rem auto;
+    }
 }

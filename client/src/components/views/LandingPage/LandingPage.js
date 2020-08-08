@@ -11,17 +11,17 @@ function LandingPage() {
     return (
         <>
             <section>
-                <div class="container">
+                <div className="container">
                     <Banner />
                 </div>
             </section>
             <section>
-                <div class="container">
+                <div className="container">
                     <About />
                 </div>
             </section>
             <section>
-                <div class="container">
+                <div className="container">
                     <Feedback />
                 </div>
             </section>
