@@ -25,11 +25,11 @@ function LandingPage() {
                 <div className="container">
                     <div className="row">
                         <div className="col-12 text-center">
-                            <h2>Our Mission</h2>
+                            <h2>Our Story</h2>
                             <p>
-                                During a four-week project-based fellowship, our founders were brought together by the desire to fix a shared problem. Over the four weeks, we researched deeper into
-                                the problem domain and affected parties, taking on the advice of peers and potential users, fine-tuned our solution with the help of our mentors, and. From this, we
-                                decided to create Project Recommend.
+                                During a four-week project-based learning curriculum, our founders were brought together by the desire to fix a shared problem. Over the four weeks we researched deeper into
+                                the problem domain and affected parties, took on the advice of our peers and potential users, and fine-tuned the solution with the help of mentors. From this, we decided
+                                to create Project Recommend.
                             </p>
                         </div>
                     </div>
