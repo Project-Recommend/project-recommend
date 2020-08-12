@@ -1,15 +1,14 @@
 import React from "react";
-// import bg from "home_page_background.jpg";
-// const homeStyle = {
-//     backgroundImage: "url(" + bg + ")",
-// };
+import { Row, Col } from "antd";
 
 function Banner() {
     return (
         <>
-        <h1>
-            Leading you to your next best project
-        </h1>
+            <Row>
+                <Col span={24}>
+                    <h1>Leading you to your next best project</h1>
+                </Col>
+            </Row>
         </>
     );
 }
