@@ -1,7 +1,7 @@
 {
-  "name": "react-boiler-plate",
+  "name": "project-recommend",
   "version": "1.0.0",
-  "description": "react boiler plate",
+  "description": "Webapp for Project Recommend.",
   "main": "index.js",
   "engine": {
     "node": "10.16.0",
@@ -14,7 +14,7 @@
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
   },
-  "author": "John ahn",
+  "author": "David Sangojinmi",
   "license": "ISC",
   "dependencies": {
     "async": "^3.1.0",
