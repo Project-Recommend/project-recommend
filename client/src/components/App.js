@@ -12,11 +12,11 @@ import CatalogPage from "./views/CatalogPage/CatalogPage";
 import ProjectsPage from "./views/ProjectsPage/ProjectsPage";
 import UploadProductPage from "./views/UploadProductPage/UploadProductPage";
 import DetailProductPage from "./views/DetailProductPage/DetailProductPage";
-import CartPage from "./views/CartPage/CartPage";
+// import CartPage from "./views/CartPage/CartPage";
 import UserAccountPage from "./views/UserAccountPage/UserAccountPage";
 import UserTeamsPage from "./views/UserTeamsPage/UserTeamsPage";
 import UserSettingsPage from "./views/UserSettingsPage/UserSettingsPage";
-import HistoryPage from "./views/HistoryPage/HistoryPage";
+// import HistoryPage from "./views/HistoryPage/HistoryPage";
 
 function App() {
     return (
