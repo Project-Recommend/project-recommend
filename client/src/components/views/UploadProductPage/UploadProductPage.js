@@ -56,7 +56,7 @@ function UploadProductPage(props) {
     const onSubmit = (event) => {
         event.preventDefault();
 
-        if (!TitleValue || !DescriptionValue || !LinkValue || !CodingLanguageValue || !TagValue || !SkillLevelValue || !ParticipationValue) {
+        if (!TitleValue || !DescriptionValue || !CodingLanguageValue || !TagValue || !SkillLevelValue || !ParticipationValue) {
             return alert("fill all the fields first!");
         }
 
@@ -74,7 +74,7 @@ function UploadProductPage(props) {
         Axios.post("/api/product/uploadProduct", variables).then((response) => {
             if (response.data.success) {
                 alert("Project successfully uploaded.");
-                props.history.push("/");
+                props.history.push("/catalog");
             } else {
                 alert("Failed to upload project.");
             }
@@ -134,6 +134,7 @@ function UploadProductPage(props) {
 
                 <Button onClick={onSubmit}>Submit</Button>
             </Form>
+            <br />
         </div>
     );
 }
