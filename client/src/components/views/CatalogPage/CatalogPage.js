@@ -11,7 +11,7 @@ const { Meta } = Card;
 function LandingPage() {
     const [Products, setProducts] = useState([]);
     const [Skip, setSkip] = useState(0);
-    const [Limit, setLimit] = useState(8);
+    const [Limit, setLimit] = useState(12);
     const [PostSize, setPostSize] = useState();
     const [SearchTerms, setSearchTerms] = useState("");
 
@@ -63,12 +63,8 @@ function LandingPage() {
             <Col lg={6} md={8} xs={24}>
                 <Card hoverable={true}>
                     <Meta
-                        title={product.title}
-                        description={
-                            <a href={`/product/${product._id}`} style={{ textDecoration: "none" }}>
-                                {product.description}
-                            </a>
-                        }
+                        title={<a href={`/product/${product._id}`} style={{ textDecoration: "none", color: "#212529"}}>
+                                {product.title}</a>}
                     ></Meta>
                 </Card>
             </Col>
