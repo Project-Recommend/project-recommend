@@ -18,24 +18,38 @@ function ProductInfo(props) {
 
     return (
         <div>
-            <Descriptions title="">
-                <Descriptions.Item label="Title">{Product.title}</Descriptions.Item>
-                <Descriptions.Item label="Description">{Product.description}</Descriptions.Item>
-                <Descriptions.Item label="Link">
-                    <a href={Product.link}>{Product.link}</a>
-                </Descriptions.Item>
-                <Descriptions.Item label="Language">{Product.codinglanguage}</Descriptions.Item>
-                <Descriptions.Item label="Skill Level">{Product.skilllevel}</Descriptions.Item>
-                <Descriptions.Item label="Participation">{Product.participation}</Descriptions.Item>
-                <Descriptions.Item label="Tags">{Product.tag}</Descriptions.Item>
-            </Descriptions>
+            <h2>{Product.title}</h2>
+            <p>
+                <b>Description: </b>
+                {Product.description}
+            </p>
+            <p>
+                <b>Link: </b>
+                <a href={Product.link}>{Product.link}</a>
+            </p>
+            <p>
+                <b>Language: </b>
+                {Product.codinglanguage}
+            </p>
+            <p>
+                <b>Skill level: </b>
+                {Product.skilllevel}
+            </p>
+            <p>
+                <b>Participation: </b>
+                {Product.participation}
+            </p>
+            <p>
+                <b>Tags: </b>
+                {Product.tag}
+            </p>
 
             <br />
             <br />
             <br />
             <div style={{ display: "flex", justifyContent: "center" }}>
                 <Button size="large" shape="round" type="danger" onClick={addToCarthandler}>
-                    Add to Cart
+                    Add to My Projects
                 </Button>
             </div>
         </div>

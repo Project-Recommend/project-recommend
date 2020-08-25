@@ -51,9 +51,9 @@ function RightMenu(props) {
           <a href="/history">History</a>
         </Menu.Item> */}
 
-                {/* <Menu.Item key="upload">
-          <a href="/product/upload">Upload</a>
-        </Menu.Item> */}
+                <Menu.Item key="upload">
+                    <a href="/product/upload">Upload</a>
+                </Menu.Item>
 
                 {/* <Menu.Item key="cart" style={{ paddingBottom: 3 }}>
                     <Badge count={user.userData && user.userData.cart.length}>
@@ -63,11 +63,17 @@ function RightMenu(props) {
                     </Badge>
                 </Menu.Item> */}
 
-                <SubMenu title={<span>You</span>}>
+                <SubMenu title={<span>Me</span>}>
                     <MenuItemGroup title="">
-                        <Menu.Item key="setting:1"><a href="/user/account">Account</a></Menu.Item>
-                        <Menu.Item key="setting:2"><a href="/user/teams">Teams</a></Menu.Item>
-                        <Menu.Item key="setting:3"><a href="/user/settings">Settings</a></Menu.Item>
+                        <Menu.Item key="setting:1">
+                            <a href="/user/account">Account</a>
+                        </Menu.Item>
+                        <Menu.Item key="setting:2">
+                            <a href="/user/teams">Teams</a>
+                        </Menu.Item>
+                        <Menu.Item key="setting:3">
+                            <a href="/user/settings">Settings</a>
+                        </Menu.Item>
                         <Menu.Item key="logout">
                             <a onClick={logoutHandler}>Logout</a>
                         </Menu.Item>

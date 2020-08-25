@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import {
-    getCartItems,
-    removeCartItem,
-    onSuccessBuy
+    getProjects,
+    removeProjects
 } from '../../../_actions/user_actions';
 import UserCardBlock from './Sections/UserCardBlock';
 import { Result, Empty } from 'antd';
@@ -23,7 +22,7 @@ function CartPage(props) {
                 props.user.userData.cart.forEach(item => {
                     cartItems.push(item.id)
                 });
-                dispatch(getCartItems(cartItems, props.user.userData.cart))
+                dispatch(getProjects(cartItems, props.user.userData.cart))
                     .then((response) => {
                         if (response.payload.length > 0) {
                             calculateTotal(response.payload)
@@ -48,7 +47,7 @@ function CartPage(props) {
 
     const removeFromCart = (productId) => {
 
-        dispatch(removeCartItem(productId))
+        dispatch(removeProjects(productId))
             .then((response) => {
                 if (response.payload.cartDetail.length <= 0) {
                     setShowTotal(false)
@@ -58,26 +57,26 @@ function CartPage(props) {
             })
     }
 
-    const transactionSuccess = (data) => {
-        dispatch(onSuccessBuy({
-            cartDetail: props.user.cartDetail,
-            paymentData: data
-        }))
-            .then(response => {
-                if (response.payload.success) {
-                    setShowSuccess(true)
-                    setShowTotal(false)
-                }
-            })
-    }
+    // const transactionSuccess = (data) => {
+    //     dispatch(onSuccessBuy({
+    //         cartDetail: props.user.cartDetail,
+    //         paymentData: data
+    //     }))
+    //         .then(response => {
+    //             if (response.payload.success) {
+    //                 setShowSuccess(true)
+    //                 setShowTotal(false)
+    //             }
+    //         })
+    // }
 
-    const transactionError = () => {
-        console.log('Paypal error')
-    }
+    // const transactionError = () => {
+    //     console.log('Paypal error')
+    // }
 
-    const transactionCanceled = () => {
-        console.log('Transaction canceled')
-    }
+    // const transactionCanceled = () => {
+    //     console.log('Transaction canceled')
+    // }
 
 
     return (
@@ -117,14 +116,14 @@ function CartPage(props) {
 
             {/* Paypal Button */}
 
-            {ShowTotal &&
+            {ShowTotal
 
-                <Paypal
-                    toPay={Total}
-                    onSuccess={transactionSuccess}
-                    transactionError={transactionError}
-                    transactionCanceled={transactionCanceled}
-                />
+                // <Paypal
+                //     toPay={Total}
+                //     onSuccess={transactionSuccess}
+                //     transactionError={transactionError}
+                //     transactionCanceled={transactionCanceled}
+                // />
 
             }
 
