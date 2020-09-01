@@ -42,6 +42,7 @@ if (process.env.NODE_ENV === "production") {
 
   // index.html for all page routes
   app.get("*", (req, res) => {
+    res.setHeader("Set-Cookie", "HttpsOnly;Secure;SameSite=None");
     res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
   });
 }
