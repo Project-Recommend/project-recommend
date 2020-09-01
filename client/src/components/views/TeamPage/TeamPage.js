@@ -18,8 +18,7 @@ function TeamPage() {
                             <p>
                                 The idea we came up with as a collective, affects much more than one person. Hundreds of
                                 thousands of people across the globe are trying to break into the programming industry and projects are a viable way for them to show their knowledge to employers.
-                                After talking with other students and professionals, we realised that this was something that needed to be pursued. From this we created Project Recommend, our primary
-                                aim being to XXX
+                                After talking with other students and professionals, we realised that this was something that needed to be pursued. From this we created Project Recommend.
                             </p>
                             <br />
                             <p>

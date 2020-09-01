@@ -52,16 +52,17 @@ function LandingPage() {
                                 projects to do.
                             </p>
                         </div>
-                        
                     </div>
                     <div className="row">
                         <div className="col-12 text-center">
-                            <br /><br /><h2>Our solution</h2>
+                            <br />
+                            <br />
+                            <h2>Our solution</h2>
                         </div>
                     </div>
                     <hr className="featurette-divider" />
                     <div className="row featurette">
-                        <div className="col-md-7">
+                        <div className="col-md-12">
                             <h2 className="featurette-heading">
                                 Find projects <span className="text-muted">quickly and effectively.</span>
                             </h2>
@@ -70,15 +71,12 @@ function LandingPage() {
                                 browse through our project catalog.
                             </p>
                         </div>
-                        <div className="col-md-5 text-center">
-                            <Icon type="clock-circle" className="big-icons" />
-                        </div>
                     </div>
 
                     <hr className="featurette-divider" />
 
                     <div className="row featurette">
-                        <div className="col-md-7 order-md-2">
+                        <div className="col-md-12 right">
                             <h2 className="featurette-heading">
                                 Keep track of your <span className="text-muted">favourite projects.</span>
                             </h2>
@@ -87,22 +85,16 @@ function LandingPage() {
                                 projects in language or topic specific collections.
                             </p>
                         </div>
-                        <div className="col-md-5 order-md-1">
-                            <Icon type="pushpin" className="big-icons" />
-                        </div>
                     </div>
 
                     <hr className="featurette-divider" />
 
                     <div className="row featurette">
-                        <div className="col-md-7">
+                        <div className="col-md-12">
                             <h2 className="featurette-heading">
                                 Get useful <span className="text-muted">guidance.</span>
                             </h2>
                             <p className="lead">Completing projects is not the end of the journey. We offer help on how to talk about projects you have completed in resumes and applications.</p>
-                        </div>
-                        <div className="col-md-5">
-                            <Icon type="info-circle" className="big-icons" />
                         </div>
                     </div>
 
