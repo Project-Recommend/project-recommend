@@ -70,6 +70,10 @@ tr:nth-child(even) {
 
 /* Other stuff to rearrange later */
 
+.right {
+  text-align: right;
+}
+
 .section {
   padding: 90px 0;
   position: relative;
@@ -300,7 +304,7 @@ tr:nth-child(even) {
 }
 
 .featurette-divider {
-  margin: 5rem 0;
+  margin: 3rem 0;
 }
 
 .featurette-heading {
