@@ -6,8 +6,8 @@ const MenuItemGroup = Menu.ItemGroup;
 function LeftMenu(props) {
   return (
     <Menu mode={props.mode}>
-    <Menu.Item key="mail">
-      <a href="/">Home</a>
+    <Menu.Item key="team">
+      <a href="/team">The Team</a>
     </Menu.Item>
     {/* <SubMenu title={<span>User</span>}>
       <MenuItemGroup title="">

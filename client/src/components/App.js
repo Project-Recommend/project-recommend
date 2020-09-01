@@ -5,6 +5,7 @@ import Auth from "../hoc/auth";
 import LandingPage from "./views/LandingPage/LandingPage.js";
 import LoginPage from "./views/LoginPage/LoginPage.js";
 import RegisterPage from "./views/RegisterPage/RegisterPage.js";
+import TeamPage from "./views/TeamPage/TeamPage.js";
 import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer";
 import RecommendPage from "./views/RecommendPage/RecommendPage";
@@ -27,6 +28,7 @@ function App() {
                     <Route exact path="/" component={Auth(LandingPage, null)} />
                     <Route exact path="/login" component={Auth(LoginPage, false)} />
                     <Route exact path="/register" component={Auth(RegisterPage, false)} />
+                    <Route exact path="/team" component={Auth(TeamPage, null)} />
                     <Route exact path="/recommend" component={Auth(RecommendPage, true)} />
                     <Route exact path="/catalog" component={Auth(CatalogPage, true)} />
                     <Route exact path="/projects" component={Auth(ProjectsPage, true)} />
