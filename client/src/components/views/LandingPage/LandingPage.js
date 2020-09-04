@@ -70,6 +70,7 @@ function LandingPage() {
                                 Using our platform, you can save 10x as much time when looking for projects. You can either get projects recommended to you by filling in the recommend form, or you can
                                 browse through our project catalog.
                             </p>
+                            {/* Eventually add the big icons or a picture here */}
                         </div>
                     </div>
 
@@ -84,6 +85,7 @@ function LandingPage() {
                                 You can add any projects you decide to do, or plan to do, to your account. This means that you don't lose track of projects you are completing and can also keep
                                 projects in language or topic specific collections.
                             </p>
+                            {/* Eventually add the big icons or a picture here */}
                         </div>
                     </div>
 
@@ -95,6 +97,7 @@ function LandingPage() {
                                 Get useful <span className="text-muted">guidance.</span>
                             </h2>
                             <p className="lead">Completing projects is not the end of the journey. We offer help on how to talk about projects you have completed in resumes and applications.</p>
+                            {/* Eventually add the big icons or a picture here */}
                         </div>
                     </div>
 

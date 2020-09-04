@@ -1,4 +1,9 @@
 import React from "react";
+import ShrayTyagi from "./ShrayTyagi.png";
+import DavidSangojinmi from "./DavidSangojinmi.png";
+import AkshatChandel from "./AkshatChandel.png";
+import ArchnaSobti from "./ArchnaSobti.png";
+import SaneelaGuaher from "./SaneelaGuaher.png";
 import { Layout, Icon, Col, Row } from "antd";
 
 function TeamPage() {
@@ -16,9 +21,9 @@ function TeamPage() {
                             </p>
                             <br />
                             <p>
-                                The idea we came up with as a collective, affects much more than one person. Hundreds of
-                                thousands of people across the globe are trying to break into the programming industry and projects are a viable way for them to show their knowledge to employers.
-                                After talking with other students and professionals, we realised that this was something that needed to be pursued. From this we created Project Recommend.
+                                The idea we came up with as a collective, affects much more than one person. Hundreds of thousands of people across the globe are trying to break into the programming
+                                industry and projects are a viable way for them to show their knowledge to employers. After talking with other students and professionals, we realised that this was
+                                something that needed to be pursued. From this we created Project Recommend.
                             </p>
                             <br />
                             <p>
@@ -30,7 +35,9 @@ function TeamPage() {
                     </div>
                     <div className="row text-center justify-content-between about-section">
                         <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2">
-                            {/* Have the image of the team member here */}
+                            <div className="col-12 profile-cover">
+                                <img src={ShrayTyagi} className="profile-pics" />
+                            </div>
                             <h4>Shray</h4>
                             <p>
                                 <a href="https://www.linkedin.com/in/shray-tyagi/">LinkedIn</a>
@@ -40,7 +47,9 @@ function TeamPage() {
                             </p>
                         </div>
                         <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2">
-                            {/* Have the image of the team member here */}
+                            <div className="col-12 profile-cover">
+                                <img src={DavidSangojinmi} className="profile-pics" />
+                            </div>
                             <h4>David</h4>
                             <p>
                                 <a href="https://linkedin.com/in/david-sangojinmi/">LinkedIn</a>
@@ -50,7 +59,9 @@ function TeamPage() {
                             </p>
                         </div>
                         <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2">
-                            {/* Have the image of the team member here */}
+                            <div className="col-12 profile-cover">
+                                <img src={AkshatChandel} className="profile-pics" />
+                            </div>
                             <h4>Akshat</h4>
                             <p>
                                 <a href="https://www.linkedin.com/in/akshatchandel/">LinkedIn</a>
@@ -60,7 +71,9 @@ function TeamPage() {
                             </p>
                         </div>
                         <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2">
-                            {/* Have the image of the team member here */}
+                            <div className="col-12 profile-cover">
+                                <img src={ArchnaSobti} className="profile-pics" />
+                            </div>
                             <h4>Archna</h4>
                             <p>
                                 <a href="https://www.linkedin.com/in/archna-sobti-1932b01b1/">LinkedIn</a>
@@ -70,7 +83,9 @@ function TeamPage() {
                             </p>
                         </div>
                         <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2">
-                            {/* Have the image of the team member here */}
+                            <div className="col-12 profile-cover">
+                                <img src={SaneelaGuaher} className="profile-pics" />
+                            </div>
                             <h4>Saneela</h4>
                             <p>
                                 <a href="https://www.linkedin.com/in/saneela-gauhar-1b7a721a0/">LinkedIn</a>
