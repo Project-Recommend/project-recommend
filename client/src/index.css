@@ -70,6 +70,18 @@ tr:nth-child(even) {
 
 /* Other stuff to rearrange later */
 
+/* .profile-cover {
+  vertical-align: middle;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+} */
+
+.profile-pics {
+  margin: 0;
+  width: 100%;
+}
+
 .right {
   text-align: right;
 }
@@ -180,6 +192,10 @@ tr:nth-child(even) {
 }
 
 @media (max-width: 991px) {
+  .profile-pics {
+    width: 140%;
+  }
+
   .section {
     padding: 60px 0;
   }
@@ -198,6 +214,10 @@ tr:nth-child(even) {
     height: calc(100vh - 50px);
   }
   
+  .profile-pics {
+    width: 50%;
+  }
+
   .section {
     padding: 40px 0;
   }
